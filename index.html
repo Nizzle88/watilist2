@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+			crossorigin="anonymous"
+		/>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+		<link
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+			rel="stylesheet"
+			integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOM9jD2LCs/TtE8M3N4cdELTlOT+8R6LqurZfSK6"
+			crossorigin="anonymous"
+		/>
+		<style>
+			.logo-wrapper {
+				position: relative;
+				height: 125px; /* Adjust height based on logo size */
+				overflow: hidden; /* Ensure logos don't overflow out of the container */
+			}
+
+			.partner-logo {
+				position: absolute;
+				top: 0;
+				left: 50%;
+				transform: translateX(-50%);
+				transition: opacity 1s ease;
+				opacity: 0;
+			}
+
+			.partner-logo.active {
+				opacity: 1;
+			}
+
+			.testimonial {
+				display: none;
+				opacity: 0;
+				transition: opacity 1s ease;
+			}
+
+			.testimonial.active {
+				display: block;
+				opacity: 1;
+			}
+
+			/* Default styles for large screens */
+			@media (min-width: 577px) {
+				.logo-wrapper {
+					display: flex;
+					justify-content: space-around;
+					position: static;
+					height: auto; /* Adjust as needed */
+					overflow: visible; /* Ensure that logos are fully visible */
+				}
+
+				.partner-logo {
+					position: static;
+					transform: none;
+					opacity: 1;
+					left: auto;
+				}
+
+				.partner-logo.active-large::after {
+					content: '';
+					position: absolute;
+					bottom: -10px; /* Position below the logo */
+					left: 50%;
+					transform: translateX(-50%);
+					width: 50px;
+					height: 3px;
+					background-color: black; /* Color of the identifier line */
+				}
+			}
+		</style>
+		<title>MyProperTree Waitlist</title>
+	</head>
+	<body>
+		<!-- Navbar  -->
+
+		<div class="container">
+			<!--<img src="https://join.mypropertree.co.uk/assets/join/Logo.png" alt="" class="" />-->
+			<img src="https://join.mypropertree.co.uk/assets/uploads/logo/logo.png" alt="My Propertree" width="100px" />
+			<h2 class="d-inline" style="font-family: Jost, sans-serif">MyProperTree</h2>
+		</div>
+
+		<!-- Form and Card -->
+
+		<div class="col-xxl-8 px-4 d-flex container py-md-5 my-5">
+			<div class="d-flex flex-column align-items-center justify-content-center flex-lg-row">
+				<div class="col-lg-5">
+					<h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">
+						Build your <br />property <span style="color: #2596be">portfolio</span>
+					</h1>
+					<p class="lead fs-5">Invest and benefit from appreciation and rental revenue, and let MyProperTree handle the rest.</p>
+					<div class="d-grid gap-2 d-md-flex justify-content-md-start">
+						<form action="https://join.mypropertree.co.uk/submit-form" method="POST" class="w-100 fs-5 pb-5" id="waitlistForm2">
+							<input type="hidden" name="_token" value="CdLOkEkGXMg8bD0CDqtpjlMLNw4vMbSbmLkzhPhs" />
+							<input type="hidden" name="phone_code" value="+44" />
+							<input type="hidden" name="phone" value="0123456789" />
+							<input type="hidden" name="lastname" value="" />
+							<input type="hidden" name="terms_conditions" value="1" />
+							<input type="hidden" name="username" value="J6FF4J" />
+							<input type="hidden" name="country_code" value="" />
+							<input type="hidden" name="password" value="MyPropertree" />
+							<input type="hidden" name="password_confirmation" value="MyPropertree" />
+							<div>
+								<label for="email">Email *</label>
+								<input type="email" id="email" name="email" required class="w-100 mb-2 px-2 rounded-2" />
+							</div>
+							<div style="display: none">
+								<!-- Hidden input field for referral code -->
+								<input type="text" id="referral" name="referral" value="DefaultReferralCode" />
+							</div>
+							<button class="w-100 btn rounded-pill" style="background-color: #2596be; color: white" type="submit">Sign Up</button>
+							<p class="mb-0 text-center">or</p>
+
+							<button class="w-100 btn rounded-pill mb-2" style="background-color: #2596be; color: white" type="submit">
+								Sign Up With Google
+							</button>
+							<button class="w-100 btn rounded-pill" style="background-color: #2596be; color: white" type="submit">
+								Sign Up With Facebook
+							</button>
+						</form>
+					</div>
+				</div>
+				<div class="col-1"></div>
+				<div class="col-sm-8 col-lg-5">
+					<img
+						src="https://join.mypropertree.co.uk/assets/join/Card.png"
+						class="d-block mx-lg-auto img-fluid shadow-lg rounded-3"
+						alt="Bootstrap Themes"
+						width="500"
+						loading="lazy"
+					/>
+				</div>
+			</div>
+		</div>
+
+		<!-- Video and TrustPilot -->
+		<div
+			class="container shadow-lg rounded-5 py-lg-5 mb-lg-5"
+			style="
+				background: linear-gradient(354deg, rgba(37, 150, 190, 0.44) 0%, rgba(37, 150, 190, 1) 100%, rgba(37, 150, 190, 1) 100%);
+				position: relative;
+			"
+		>
+			<div class="d-flex flex-column align-items-center justify-content-center flex-lg-row gap-lg-5 py-lg-5">
+				<div class="ratio ratio-16x9 my-5 mx-5">
+					<iframe
+						src="https://www.youtube.com/embed/Y09lEno3zRM?si=qvpDMFmXkqSUZHeX"
+						title="YouTube video player"
+						frameborder="0"
+						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+						referrerpolicy="strict-origin-when-cross-origin"
+						allowfullscreen
+						class="rounded-3"
+					></iframe>
+				</div>
+				<div class="fs-5 px-3 py-3 rounded-4 shadow-lg mb-5 mb-lg-0 mx-lg-5" style="background-color: white; opacity: 80%">
+					<p>
+						<span><b>Explore Properties:</b> Browse through a selection of pre-vetted properties</span>
+					</p>
+					<p>
+						<b>Invest:</b>&nbsp;Choose a property and invest your desired amount<span><br /></span>
+					</p>
+					<p><b>Hands-Free Management</b>: Our team handles everything from building, renovations, maintenance to tenant management.</p>
+					<p class="py-0 my-0">
+						<span><b>Earn Rental Income:</b>&nbsp;Start earning, enjoy returns and value appreciation with reduced risk.</span><br />
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<!-- Partner Logos -->
+		<div class="container">
+			<h2 class="text-center display-5 fw-bold lh-1 pt-5 pb-2">Partners</h2>
+			<hr class="mb-0 mx-5" />
+		</div>
+
+		<div class="container logo-wrapper d-flex justify-content-around my-5">
+			<img src="lionsfield.png" class="partner-logo" data-testimonial="testimonial1" alt="Lionsfield Logo" width="125px" />
+			<img src="bliving.jpeg" class="partner-logo" data-testimonial="testimonial2" alt="B.Living Logo" width="125px" />
+			<div style="opacity: 60%">
+				<img src="Elysium.png" class="partner-logo" data-testimonial="testimonial3" alt="Elysium Logo" width="125px" />
+			</div>
+
+			<img src="bliving.jpeg" class="partner-logo" data-testimonial="testimonial4" alt="B.Living Logo" width="125px" />
+		</div>
+		<div class="container">
+			<div id="testimonial1" class="rounded-3 mb-5 p-5 border shadow-sm text-center testimonial">
+				<p class="m-1">This platform was my idea and it's a really good one.</p>
+				<i style="color: grey">Pascal - CEO, Lionsfield</i>
+			</div>
+			<div id="testimonial2" class="rounded-3 mb-5 p-5 border shadow-sm text-center testimonial">
+				<p class="m-1">We love it so much, we asked our logo to be here twice!</p>
+				<i style="color: grey">Emily - Co-Founder, B.Living</i>
+			</div>
+			<div id="testimonial3" class="rounded-3 mb-5 p-5 border shadow-sm text-center testimonial">
+				<p class="m-1">All of the team members are really handsome.</p>
+				<i style="color: grey">Marc - Founder, Elysium</i>
+			</div>
+			<div id="testimonial4" class="rounded-3 mb-5 p-5 border shadow-sm text-center testimonial">
+				<p class="m-1">We love it so much, we asked our logo to be here twice!</p>
+				<i style="color: grey">Emily - Co-Founder, B.Living</i>
+			</div>
+		</div>
+
+		<!-- Rewards -->
+
+		<div class="container col-xxl-10 pb-5 mb-lg-5">
+			<div class="d-flex justify-content-center mb-lg-5">
+				<img src="rewards.jpg" alt="" width="400px" class="" />
+			</div>
+
+			<div class="d-flex flex-column flex-lg-row">
+				<div class="col-lg-4 pb-5 pb-lg-0">
+					<div class="d-flex align-items-center justify-content-center">
+						<svg height="100px" width="100px" viewBox="0 0 496.158 496.158" style="margin-right: 1rem">
+							<path
+								style="fill: #2596be"
+								d="M248.082,0.003C111.07,0.003,0,111.061,0,248.085c0,137,111.07,248.07,248.082,248.07 c137.006,0,248.076-111.07,248.076-248.07C496.158,111.061,385.088,0.003,248.082,0.003z"
+							></path>
+							<path
+								style="fill: #ffffff"
+								d="M278.767,145.419c-3.126-4.003-7.276-6.006-12.451-6.006c-4.591,0-7.716,0.879-9.375,2.637 c-1.662,1.758-5.226,6.445-10.693,14.063c-5.47,7.617-11.744,14.502-18.823,20.654c-7.082,6.152-16.53,12.012-28.345,17.578 c-7.91,3.712-13.429,6.738-16.553,9.082c-3.126,2.344-4.688,6.006-4.688,10.986c0,4.298,1.586,8.082,4.761,11.353 c3.172,3.273,6.812,4.907,10.913,4.907c8.592,0,25.292-9.521,50.098-28.564V335.41c0,7.814,1.806,13.722,5.42,17.725 c3.612,4.003,8.397,6.006,14.355,6.006c13.378,0,20.068-9.814,20.068-29.443V161.972 C283.455,154.941,281.892,149.425,278.767,145.419z"
+							></path>
+						</svg>
+
+						<div class="col-6">
+							<b>Join</b>
+							<p>Sign Up to win a lifetime of free property cards, worth over £20,000 .</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-lg-4 pb-5 pb-lg-0">
+					<div class="d-flex align-items-center justify-content-center">
+						<svg height="100px" width="100px" viewBox="0 0 496.158 496.158" style="margin-right: 1rem">
+							<path
+								style="fill: #2596be"
+								d="M248.082,0.003C111.07,0.003,0,111.061,0,248.085c0,137,111.07,248.07,248.082,248.07 c137.006,0,248.076-111.07,248.076-248.07C496.158,111.061,385.088,0.003,248.082,0.003z"
+							></path>
+							<path
+								style="fill: #ffffff"
+								d="M319.783,325.595c-4.005-3.124-9.814-4.688-17.432-4.688h-76.465c2.44-3.71,4.834-6.885,7.178-9.521 c5.468-6.64,15.55-15.967,30.249-27.979c14.696-12.012,25.17-20.824,31.421-26.44c6.249-5.614,12.378-13.378,18.384-23.291 c6.006-9.911,9.009-20.922,9.009-33.032c0-7.713-1.442-15.161-4.321-22.339c-2.882-7.178-6.91-13.5-12.085-18.97 c-5.177-5.468-11.183-9.764-18.018-12.891c-10.547-4.688-23.291-7.031-38.232-7.031c-12.403,0-23.218,1.831-32.446,5.493 s-16.846,8.473-22.852,14.429c-6.006,5.958-10.524,12.598-13.55,19.922c-3.028,7.324-4.541,14.355-4.541,21.094 c0,5.566,1.611,9.961,4.834,13.184s7.274,4.834,12.158,4.834c5.566,0,9.789-1.758,12.671-5.273 c2.879-3.516,5.468-8.544,7.764-15.088c2.293-6.542,3.93-10.547,4.907-12.012c7.324-11.229,17.381-16.846,30.176-16.846 c6.054,0,11.646,1.369,16.772,4.102c5.127,2.735,9.178,6.569,12.158,11.499c2.978,4.933,4.468,10.524,4.468,16.772 c0,5.763-1.392,11.646-4.175,17.651s-6.837,11.865-12.158,17.578c-5.324,5.713-11.989,11.403-19.995,17.065 c-4.493,3.028-11.964,9.352-22.412,18.97c-10.451,9.62-22.169,21.167-35.156,34.644c-3.126,3.321-6.006,7.887-8.643,13.696 c-2.637,5.812-3.955,10.474-3.955,13.989c0,5.47,2.051,10.231,6.152,14.282c4.102,4.054,9.814,6.079,17.139,6.079H306.6 c6.445,0,11.254-1.659,14.429-4.98c3.172-3.319,4.761-7.372,4.761-12.158C325.789,332.97,323.786,328.722,319.783,325.595z"
+							></path>
+						</svg>
+
+						<div class="col-6">
+							<b>Share</b>
+							<p>Unlock additional special rewards just for referring your friends.</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-lg-4">
+					<div class="d-flex align-items-center justify-content-center">
+						<svg height="100px" width="100px" viewBox="0 0 496.158 496.158" style="margin-right: 1rem">
+							<path
+								style="fill: #2596be"
+								d="M248.082,0.003C111.07,0.003,0,111.061,0,248.085c0,137,111.07,248.07,248.082,248.07 c137.006,0,248.076-111.07,248.076-248.07C496.158,111.061,385.088,0.003,248.082,0.003z"
+							></path>
+							<path
+								style="fill: #ffffff"
+								d="M319.637,269.711c-2.637-6.395-6.569-12.231-11.792-17.505c-5.226-5.273-11.646-9.961-19.263-14.063 c7.91-6.64,13.989-13.451,18.237-20.435c4.248-6.981,6.372-15.355,6.372-25.122c0-7.42-1.465-14.355-4.395-20.801 s-7.276-12.108-13.037-16.992c-5.763-4.882-12.55-8.617-20.361-11.206c-7.814-2.586-16.457-3.882-25.928-3.882 c-10.84,0-20.654,1.538-29.443,4.614s-16.139,7.155-22.046,12.231c-5.91,5.079-10.4,10.426-13.477,16.04 c-3.076,5.617-4.614,10.963-4.614,16.04c0,5.273,1.634,9.499,4.907,12.671c3.271,3.175,6.859,4.761,10.767,4.761 c3.319,0,6.249-0.586,8.789-1.758c2.538-1.172,4.296-2.783,5.273-4.834c1.659-3.809,3.49-7.86,5.493-12.158 c2-4.296,4.125-7.812,6.372-10.547c2.245-2.733,5.296-4.93,9.155-6.592c3.856-1.659,8.764-2.49,14.722-2.49 c8.789,0,15.77,2.71,20.947,8.13c5.175,5.42,7.764,11.891,7.764,19.409c0,9.865-3.248,17.432-9.741,22.705 c-6.496,5.273-14.234,7.91-23.218,7.91h-6.006c-6.935,0-12.158,1.442-15.674,4.321c-3.516,2.882-5.273,6.665-5.273,11.353 c0,4.786,1.465,8.521,4.395,11.206c2.93,2.687,7.079,4.028,12.451,4.028c1.172,0,3.809-0.194,7.91-0.586 c4.102-0.389,7.127-0.586,9.082-0.586c11.133,0,19.823,3.248,26.074,9.741c6.249,6.496,9.375,15.454,9.375,26.88 c0,7.716-1.831,14.502-5.493,20.361s-8.302,10.279-13.916,13.257c-5.617,2.98-11.451,4.468-17.505,4.468 c-10.547,0-18.727-3.296-24.536-9.888c-5.812-6.592-11.256-16.674-16.333-30.249c-0.783-2.245-2.442-4.175-4.98-5.786 c-2.541-1.611-5.177-2.417-7.91-2.417c-5.47,0-10.034,1.735-13.696,5.2c-3.662,3.468-5.493,8.034-5.493,13.696 c0,4.395,1.538,9.961,4.614,16.699s7.617,13.257,13.623,19.556s13.646,11.549,22.925,15.747c9.276,4.198,19.775,6.299,31.494,6.299 c11.522,0,22.046-1.831,31.567-5.493s17.748-8.739,24.683-15.234c6.933-6.493,12.181-13.891,15.747-22.192 c3.563-8.299,5.347-16.894,5.347-25.781C323.592,283.018,322.273,276.109,319.637,269.711z"
+							></path>
+						</svg>
+
+						<div class="col-6">
+							<b>Win</b>
+							<p>More entries mean more chances to win amazing prizes.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Secondary Form Sm devices-->
+
+		<div class="container mb-5 d-lg-none fs-4 text-center" style="color: #003366">
+			<h3 class="text-center fw-bold fs-1" style="color: #003366">
+				Join now and be enterred into a prize draw to win property cards worth over £20,000!
+			</h3>
+		</div>
+		<div class="container d-lg-none">
+			<form action="https://join.mypropertree.co.uk/submit-form" method="POST" class="w-100 fs-5 pb-5" id="waitlistForm2">
+				<input type="hidden" name="_token" value="CdLOkEkGXMg8bD0CDqtpjlMLNw4vMbSbmLkzhPhs" />
+				<input type="hidden" name="phone_code" value="+44" />
+				<input type="hidden" name="phone" value="0123456789" />
+				<input type="hidden" name="lastname" value="" />
+				<input type="hidden" name="terms_conditions" value="1" />
+				<input type="hidden" name="username" value="J6FF4J" />
+				<input type="hidden" name="country_code" value="" />
+				<input type="hidden" name="password" value="MyPropertree" />
+				<input type="hidden" name="password_confirmation" value="MyPropertree" />
+				<div>
+					<label for="email">Email *</label>
+					<input type="email" id="email" name="email" required class="w-100 mb-2 px-2 rounded-2" />
+				</div>
+				<div style="display: none">
+					<!-- Hidden input field for referral code -->
+					<input type="text" id="referral" name="referral" value="DefaultReferralCode" />
+				</div>
+				<button class="w-100 btn rounded-pill" style="background-color: #2596be; color: white" type="submit">Sign Up</button>
+				<p class="mb-0 text-center">or</p>
+
+				<button class="w-100 btn rounded-pill mb-2" style="background-color: #2596be; color: white" type="submit">Sign Up With Google</button>
+				<button class="w-100 btn rounded-pill" style="background-color: #2596be; color: white" type="submit">Sign Up With Facebook</button>
+			</form>
+		</div>
+
+		<!-- Secondary Form Lg devices-->
+
+		<div class="container d-flex justify-content-center align-items-center gap-5 my-5 py-5 rounded-5 d-none d-lg-flex shadow-lg">
+			<div class="d-flex col-5">
+				<form
+					action="https://join.mypropertree.co.uk/submit-form"
+					method="POST"
+					class="w-100 fs-5 p-lg-5 rounded-5 shadow-lg"
+					id="waitlistForm2"
+					style="color: #f1f1f1; background-color: #2596be"
+				>
+					<h3 class="fw-bold text-center d-none d-lg-block">Join Now</h3>
+					<input type="hidden" name="_token" value="CdLOkEkGXMg8bD0CDqtpjlMLNw4vMbSbmLkzhPhs" />
+					<input type="hidden" name="phone_code" value="+44" />
+					<input type="hidden" name="phone" value="0123456789" />
+					<input type="hidden" name="lastname" value="" />
+					<input type="hidden" name="terms_conditions" value="1" />
+					<input type="hidden" name="username" value="J6FF4J" />
+					<input type="hidden" name="country_code" value="" />
+					<input type="hidden" name="password" value="MyPropertree" />
+					<input type="hidden" name="password_confirmation" value="MyPropertree" />
+					<div>
+						<label for="email">Email *</label>
+						<input type="email" id="email" name="email" required class="w-100 mb-2 px-2 rounded-2 border-0" />
+					</div>
+					<div style="display: none">
+						<!-- Hidden input field for referral code -->
+						<input type="text" id="referral" name="referral" value="DefaultReferralCode" />
+					</div>
+					<button class="w-100 btn rounded-pill" style="background-color: white" type="submit">Sign Up</button>
+					<p class="mb-0 text-center">or</p>
+
+					<button class="w-100 btn rounded-pill mb-2" style="background-color: white" type="submit">Sign Up With Google</button>
+					<button class="w-100 btn rounded-pill" style="background-color: white" type="submit">Sign Up With Facebook</button>
+				</form>
+			</div>
+			<div></div>
+			<div class="col-4 fs-3" style="color: #003366">
+				<h3 class="fw-bold lh-1 display-5" style="color: #003366">
+					Join now and be enterred into a prize draw to win property cards worth over £20,000!
+				</h3>
+			</div>
+		</div>
+
+		<!-- FAQ's -->
+
+		<div class="container">
+			<h2 class="text-center mb-5 display-5 fw-bold lh-1">FAQ's</h2>
+			<div class="accordion" id="accordionExample">
+				<div class="accordion-item mb-4">
+					<h4 class="accordion-header mb-0" id="heading5">
+						<button
+							class="accordion-button"
+							type="button"
+							data-bs-toggle="collapse"
+							data-bs-target="#collapse5"
+							aria-expanded="true"
+							aria-controls="collapse5"
+						>
+							What is a property card?
+						</button>
+					</h4>
+					<div id="collapse5" class="accordion-collapse collapse show" aria-labelledby="heading0" data-bs-parent="#accordionExample">
+						<div class="accordion-body">
+							<p></p>
+							<p>A property card represents ownership of a percentage share in a particular property.&nbsp;</p>
+							<p>
+								These property cards will entitle the holder to regular rental income which is paid proportionally based on the value
+								of cards owned.
+							</p>
+							<p>
+								For example, if a property generates £2500 per month in rent and you own property cards worth 2% of the property, you
+								would receive an annual income of £600 just for holding the card.
+							</p>
+							<p></p>
+						</div>
+					</div>
+				</div>
+
+				<div class="accordion-item mb-4">
+					<h4 class="accordion-header mb-0" id="heading0">
+						<button
+							class="accordion-button collapsed"
+							type="button"
+							data-bs-toggle="collapse"
+							data-bs-target="#collapse0"
+							aria-expanded="false"
+							aria-controls="collapse0"
+						>
+							What is MyProperTree?
+						</button>
+					</h4>
+					<div id="collapse0" class="accordion-collapse collapse" aria-labelledby="heading0" data-bs-parent="#accordionExample">
+						<div class="accordion-body">
+							<p></p>
+							<p>MyProperTree is a platform that offers fractionalised investments in UK real estate deals.&nbsp;</p>
+							<p>
+								Our users can choose from a variety of pre-vetted properties and make investments in minutes from as little as £100.
+								Benefit from capital appreciation and rental income whilst MyProperTree handles the management and takes care of all
+								operating responsibilities.&nbsp;
+							</p>
+							<p></p>
+						</div>
+					</div>
+				</div>
+
+				<div class="accordion-item mb-4">
+					<h4 class="accordion-header mb-0" id="heading1">
+						<button
+							class="accordion-button collapsed"
+							type="button"
+							data-bs-toggle="collapse"
+							data-bs-target="#collapse1"
+							aria-expanded="false"
+							aria-controls="collapse1"
+						>
+							Who is MyProperTree for?
+						</button>
+					</h4>
+					<div id="collapse1" class="accordion-collapse collapse" aria-labelledby="heading1" data-bs-parent="#accordionExample">
+						<div class="accordion-body">
+							<p></p>
+							<p>
+								At MyProperTree, our mission is to remove the barriers to entry and allow everyone to build wealth through real estate
+								investing.
+							</p>
+							<p></p>
+							<p>
+								Whether you are a seasoned property investor, aspiring landlord or are looking to safeguard your financial future
+								without the headaches usually involved, MyProperTree is here for you.
+							</p>
+							<p></p>
+						</div>
+					</div>
+				</div>
+				<div class="accordion-item mb-4">
+					<h4 class="accordion-header mb-0" id="heading2">
+						<button
+							class="accordion-button collapsed"
+							type="button"
+							data-bs-toggle="collapse"
+							data-bs-target="#collapse2"
+							aria-expanded="false"
+							aria-controls="collapse2"
+						>
+							How does MyProperTree work?
+						</button>
+					</h4>
+					<div id="collapse2" class="accordion-collapse collapse" aria-labelledby="heading2" data-bs-parent="#accordionExample">
+						<div class="accordion-body">
+							<p></p>
+							<p>MyProperTree makes investing in UK real estate simple.</p>
+							<br />
+							<p><strong>Explore Properties:</strong> Browse through a selection of pre-vetted properties</p>
+							<p><strong>Invest:</strong> Choose a property and invest your desired amount</p>
+							<p></p>
+							<p>
+								<strong>Earn: </strong>Start earning, enjoy returns and value appreciation with reduced risk. Rental income is
+								currently paid out quarterly.
+							</p>
+							<p></p>
+							<p>
+								MyProperTree takes care of all of the hard work associated with traditional investments: sourcing the properties,
+								renovations, working with tenants, management &amp; maintenance, accounting and insurance.
+							</p>
+							<p></p>
+						</div>
+					</div>
+				</div>
+				<div class="accordion-item mb-4">
+					<h4 class="accordion-header mb-0" id="heading3">
+						<button
+							class="accordion-button collapsed"
+							type="button"
+							data-bs-toggle="collapse"
+							data-bs-target="#collapse3"
+							aria-expanded="false"
+							aria-controls="collapse3"
+						>
+							Why invest in UK real estate with MyProperTree?
+						</button>
+					</h4>
+					<div id="collapse3" class="accordion-collapse collapse" aria-labelledby="heading3" data-bs-parent="#accordionExample">
+						<div class="accordion-body">
+							<p></p>
+							<p>Real estate has always been the investment of choice for the wealthy for a number of reasons.</p>
+							<p>
+								<b>Stability</b>&nbsp;- The real estate market in the UK has historically shown resilience, offering stability in
+								uncertain times. House prices double on average every 8.7 years.
+							</p>
+							<p>
+								<span><b>Demand</b>&nbsp;-&nbsp;</span>There's a persistent demand for housing in the UK due to factors like
+								population growth, urbanization, and a shortage of affordable housing. This demand provides a solid foundation for
+								property investment.
+							</p>
+							<p>
+								<b>Diversification</b> - Real estate&nbsp;tends to have a low correlation with other asset classes like stocks and
+								bonds, meaning it can help spread risk.
+							</p>
+							<p>
+								<b>Affordability</b>&nbsp;- With the fractionized ownership offered my MyProperTree you can begin your investment
+								journey from as little as £100, unlocking opportunities previously reserved for those with large amounts of capital.
+							</p>
+							<p>
+								<b>Simplicity</b>&nbsp;- The knowledge required and time involved in real estate investments can be daunting.
+								MyProperTree handle the acquisitions, maintenance and paperwork for all properties making the process for our users
+								smooth and simple.
+							</p>
+							<p><br /></p>
+							<p></p>
+						</div>
+					</div>
+				</div>
+				<div class="accordion-item mb-4">
+					<h4 class="accordion-header mb-0" id="heading4">
+						<button
+							class="accordion-button collapsed"
+							type="button"
+							data-bs-toggle="collapse"
+							data-bs-target="#collapse4"
+							aria-expanded="false"
+							aria-controls="collapse4"
+						>
+							How do I earn with MyProperTree?
+						</button>
+					</h4>
+					<div id="collapse4" class="accordion-collapse collapse" aria-labelledby="heading4" data-bs-parent="#accordionExample">
+						<div class="accordion-body">
+							<p></p>
+							<p>
+								At MyProperTree we offer a variety of deal types through our property cards. Depending on the deal type that you
+								purchase you may earn through rental income, capital appreciation on the value of a property, refinance bonuses and
+								more. Specific details can be found in the property details section of each of the cards that we offer.
+							</p>
+							<p></p>
+						</div>
+					</div>
+				</div>
+
+				<div class="accordion-item mb-4">
+					<h4 class="accordion-header mb-0" id="heading10">
+						<button
+							class="accordion-button collapsed"
+							type="button"
+							data-bs-toggle="collapse"
+							data-bs-target="#collapse10"
+							aria-expanded="false"
+							aria-controls="collapse10"
+						>
+							Will I have any responsibilities toward the properties that I invest in?
+						</button>
+					</h4>
+					<div id="collapse10" class="accordion-collapse collapse" aria-labelledby="heading10" data-bs-parent="#accordionExample">
+						<div class="accordion-body">
+							<p></p>
+							<p>Absolutely none.</p>
+							<p><br /></p>
+							<p>
+								MyProperTree take care of all of the work relating to upkeep of the property including any maintenance and repairs,
+								replacing tenants and all of the admin work traditionally associated with being a landlord/property manager.
+							</p>
+							<p></p>
+						</div>
+					</div>
+				</div>
+				<div class="accordion-item mb-4">
+					<h4 class="accordion-header mb-0" id="heading11">
+						<button
+							class="accordion-button collapsed"
+							type="button"
+							data-bs-toggle="collapse"
+							data-bs-target="#collapse11"
+							aria-expanded="false"
+							aria-controls="collapse11"
+						>
+							Can non-UK citizens invest with MyProperTree?
+						</button>
+					</h4>
+					<div id="collapse11" class="accordion-collapse collapse" aria-labelledby="heading11" data-bs-parent="#accordionExample">
+						<div class="accordion-body">
+							<p></p>
+							<p>
+								Yes. The UK property market is one of the strongest in the world and we're making this accessible to everyone.&nbsp;
+							</p>
+							<p></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Footer -->
+
+		<div class="container-fluid mt-20">
+			<footer class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 py-5 border-top">
+				<div class="col mb-3 d-flex align-items-end">
+					<!--<img src="https://join.mypropertree.co.uk/assets/join/Logo.png" alt="" class="" /> -->
+					<img src="https://join.mypropertree.co.uk/assets/uploads/logo/logo.png" alt="My Propertree" width="100px" />
+					<p class="text-body-secondary d-inline">© 2024</p>
+				</div>
+
+				<div class="col mb-3">
+					<h5>Contact</h5>
+					<p class="mb-1">+44 7584296843</p>
+					<p>info@mypropertree.co.uk</p>
+				</div>
+
+				<div class="col mb-3">
+					<h5>Address</h5>
+					<ul class="nav flex-column">
+						<p class="mb-1">Barlby House,</p>
+						<p class="mb-1">2 Barlby Road,</p>
+						<p>Yorkshire YO8</p>
+					</ul>
+				</div>
+
+				<div class="col mb-3">
+					<h5>Partners</h5>
+					<ul class="nav flex-column">
+						<li class="nav-item mb-2"><a class="nav-link text-body-secondary p-0" href="https://www.lionsfield.co.uk/">Lionsfield</a></li>
+						<li class="nav-item mb-2"><a class="nav-link text-body-secondary p-0" href="">Elysium</a></li>
+						<li class="nav-item"><a class="nav-link text-body-secondary p-0" href="">B.Living</a></li>
+					</ul>
+				</div>
+
+				<div class="col mb-3">
+					<h5>Social</h5>
+					<ul class="nav flex-column">
+						<li class="nav-item mb-2">
+							<a
+								href="https://www.youtube.com/channel/UCj8YRAHIXPBPSNETKKSEBYA"
+								class="nav-link p-0 text-body-secondary"
+								target="_blank"
+							>
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" width="20px" aria-hidden="true" focusable="false">
+									<path
+										style="fill: red"
+										d="M549.7 124.1c-6.3-23.7-24.8-42.3-48.3-48.6C458.8 64 288 64 288 64S117.2 64 74.6 75.5c-23.5 6.3-42 24.9-48.3 48.6-11.4 42.9-11.4 132.3-11.4 132.3s0 89.4 11.4 132.3c6.3 23.7 24.8 41.5 48.3 47.8C117.2 448 288 448 288 448s170.8 0 213.4-11.5c23.5-6.3 42-24.2 48.3-47.8 11.4-42.9 11.4-132.3 11.4-132.3s0-89.4-11.4-132.3zm-317.5 213.5V175.2l142.7 81.2-142.7 81.2z"
+									/>
+								</svg>
+								YouTube
+							</a>
+						</li>
+						<li class="nav-item mb-2">
+							<a href="https://www.linkedin.com/company/mypropertree/" class="nav-link p-0 text-body-secondary" target="_blank">
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="20px">
+									<!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+									<path
+										style="fill: #2596be"
+										d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"
+									/>
+								</svg>
+								LinkedIn
+							</a>
+						</li>
+					</ul>
+				</div>
+			</footer>
+		</div>
+
+		<script>
+			document.addEventListener('DOMContentLoaded', function () {
+				const logos = document.querySelectorAll('.partner-logo');
+				const testimonials = document.querySelectorAll('.testimonial');
+				let currentIndex = 0;
+				let interval;
+
+				function showNextLogo() {
+					const currentLogo = logos[currentIndex];
+					currentIndex = (currentIndex + 1) % logos.length;
+					const nextLogo = logos[currentIndex];
+
+					// Fade out current logo and testimonial
+					currentLogo.classList.remove('active');
+					currentLogo.classList.remove('active-large');
+					document.getElementById(currentLogo.getAttribute('data-testimonial')).classList.remove('active');
+
+					// Fade in next logo and testimonial
+					nextLogo.classList.add('active');
+					if (window.innerWidth > 576) {
+						nextLogo.classList.add('active-large');
+					}
+					document.getElementById(nextLogo.getAttribute('data-testimonial')).classList.add('active');
+				}
+
+				function startLogoRotation() {
+					// Initially show the first logo and testimonial
+					const firstLogo = logos[0];
+					firstLogo.classList.add('active');
+					if (window.innerWidth > 576) {
+						firstLogo.classList.add('active-large');
+					}
+					document.getElementById(firstLogo.getAttribute('data-testimonial')).classList.add('active');
+
+					// Start cycling through logos after 7 seconds
+					interval = setInterval(showNextLogo, 4000);
+				}
+
+				function resetStylesForLargeScreens() {
+					logos.forEach((logo) => {
+						logo.classList.remove('active', 'prev', 'next', 'active-large');
+						logo.style.left = '';
+						logo.style.transform = '';
+						logo.style.opacity = '';
+					});
+					testimonials.forEach((testimonial) => {
+						testimonial.classList.remove('active');
+					});
+					clearInterval(interval);
+					startLogoRotation();
+				}
+
+				// Start logo rotation on initial load
+				startLogoRotation();
+
+				// Add event listener to handle screen size changes
+				window.addEventListener('resize', function () {
+					clearInterval(interval);
+					if (window.innerWidth > 576) {
+						resetStylesForLargeScreens();
+					} else {
+						startLogoRotation();
+					}
+				});
+			});
+		</script>
+
+		<script>
+			// Function to get query parameters from URL
+			function getQueryParams() {
+				const params = {};
+				window.location.search
+					.substring(1)
+					.split('&')
+					.forEach((pair) => {
+						const [key, value] = pair.split('=');
+						params[decodeURIComponent(key)] = decodeURIComponent(value);
+					});
+				return params;
+			}
+
+			document.addEventListener('DOMContentLoaded', function () {
+				// Retrieve the referral code from URL parameters
+				const params = getQueryParams();
+				const referralCode = params.referral || '';
+
+				// Set the referral code in the hidden input field
+				if (referralCode) {
+					document.getElementById('referral').value = referralCode;
+					console.log('Referral code set:', referralCode); // For debugging
+				}
+			});
+
+			document.getElementById('waitlistForm').addEventListener('submit', function (event) {
+				event.preventDefault(); // Prevent the default form submission
+
+				// Simulate form submission success
+				console.log('Form submitted successfully!');
+
+				// Generate a unique referral code
+				const generatedReferralCode = 'ref-' + Math.random().toString(36).substr(2, 9);
+
+				// Redirect to the Thank You page with the generated referral code in the URL
+				window.location.href = `submitted.html?referral=${generatedReferralCode}`;
+			});
+		</script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+			crossorigin="anonymous"
+		></script>
+	</body>
+</html>
